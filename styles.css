@@ -1,0 +1,129 @@
+
+:root {
+    --primary-color: #554f6f;
+    --secondary-color: white;
+    --accent-color: #b3b3b3;
+    font-family: 'Work Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.userCard {
+    display: inline-block;
+    --user-card-image-size: 200px;
+    --user-card-padding-value: 30px;
+    box-sizing: border-box;
+
+    margin: 10px;
+    min-width: 300px;
+    width: 100%;
+    max-width: 420px;
+
+    overflow: hidden;
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+
+.userInfoWrapper {
+    padding: var(--user-card-padding-value) var(--user-card-padding-value) 0;
+}
+
+.userCard::before {
+    content: '';
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: calc(var(--user-card-image-size) / 2 + var(--user-card-padding-value));
+    z-index: -1;
+}
+
+.oneLineHiddenText {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text {
+    display: block;
+    text-align: center;
+}
+
+.userFullName {
+    margin: 0.4em auto;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.userPosition {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.userDescription {
+    color: black;
+    font-size: 1.2rem;
+    margin: 1.5em 0 2em;
+}
+
+
+.userImageWrapper {
+    margin: auto;
+    box-sizing: border-box;
+    --image-border-width: 4px;
+    height: var(--user-card-image-size);
+    width: var(--user-card-image-size);
+    border-radius: 50%;
+    border: var(--image-border-width) solid var(--secondary-color);
+    overflow: hidden;
+}
+
+.userImageWrapper > img {
+    height: calc(var(--user-card-image-size) - (var(--image-border-width) * 2));
+    width: calc(var(--user-card-image-size) - (var(--image-border-width) * 2));
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.userContactsWrapper {
+    width: 100%;
+    font-size: 0;
+
+}
+
+.userContactItem {
+    display: inline-block;
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid var(--accent-color);
+    text-decoration: none;
+}
+
+.userContactItem + .userContactItem {
+    border-left: 1px solid var(--accent-color);
+}
+
+svg.contactIcon {
+    height: 50px;
+    width: 50px;
+}
+
+svg.contactIcon > path {
+    fill: var(--accent-color);
+}
