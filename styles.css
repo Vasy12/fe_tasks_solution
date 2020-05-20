@@ -1,0 +1,101 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.statCardContainer {
+    overflow: hidden;
+    box-sizing: border-box;
+
+    min-width: 400px;
+    width: 100%;
+    max-width: 600px;
+
+    padding: 40px 30px;
+
+    border-radius: 10px;
+
+    font-weight: 500;
+    color: white;
+
+    position: relative;
+
+    margin: 20px;
+    flex: 1;
+}
+
+.statCardContainer::after, .statCardContainer::before {
+    content: '';
+    position: absolute;
+    background: white;
+    opacity: 0.2;
+    border-radius: 50%;
+}
+
+.statCardContainer::after {
+    --size: 16rem;
+    height: var(--size);
+    width: var(--size);
+    top: calc(var(--size) / -4.5);
+    right: calc(var(--size) / -2.4);
+}
+
+.statCardContainer::before {
+    --size: 26rem;
+    height: var(--size);
+    width: var(--size);
+    bottom: calc(var(--size) / -1.5);
+    right: calc(var(--size) / -3.5);
+}
+
+.statCardContainer:nth-of-type(3n + 1 ) {
+    background-image: linear-gradient(to right, #ffc5a2, #ff708a);
+    box-shadow: 3px 0 0 -2px #ff708a;
+}
+
+.statCardContainer:nth-of-type(3n + 2 ) {
+    background-image: linear-gradient(to right, #7dbeec, #007dcd);
+    box-shadow: 3px 0 0 -2px #007dcd;
+
+}
+
+.statCardContainer:nth-of-type(3n + 3 ) {
+    background-image: linear-gradient(to right, #66d7ce, #00c5ad);
+    box-shadow: 3px 0 0 -2px #00c5ad;
+}
+
+.statItemTitle {
+    font-size: 0;
+    text-align: justify-all;
+    margin-bottom: 1.2em;
+}
+
+.statItemIcon {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+.statItemIcon > path {
+    fill: white;
+}
+
+.statItemName {
+    font-size: 1.6rem;
+    vertical-align: middle;
+    width: calc(100% - 30px);
+    display: inline-block;
+}
+
+.statItemValue {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1em;
+}
+
+.statItemConclusion {
+    font-size: 1.4rem;
+}
